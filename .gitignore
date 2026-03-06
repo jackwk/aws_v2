@@ -27,6 +27,7 @@ override.tf.json
 terraform.rc
 
 # Other
+**/*.zip
 01-faers/lambda_function.zip
 02-lambda-rust/target
 02-lambda-rust/Cargo.lock
