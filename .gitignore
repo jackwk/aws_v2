@@ -4,7 +4,7 @@
 # .tfstate files (contain sensitive data and resource IDs)
 **/*.tfstate
 **/*.tfstate.*
-**/*.tfplan
+**/tfplan
 **/*.hcl
 
 # Crash logs
