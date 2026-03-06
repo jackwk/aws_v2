@@ -1,0 +1,1 @@
+{"statusCode": 200, "body": "{\"message\": \"Data successfully ingested\", \"bucket\": \"v1-raw-faers-dev\", \"key\": \"raw/faers_data_20260302152248_0_10.json\", \"records_count\": 10}"}

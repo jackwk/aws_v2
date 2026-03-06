@@ -1,0 +1,17 @@
+[package]
+name = "faers-rust"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+lambda_runtime = "0.13"
+tokio = { version = "1", features = ["macros"] }
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+reqwest = { version = "0.12", default-features = false, features = ["json", "rustls-tls"] }
+
+# Updated AWS SDK dependencies (with rt-tokio restored)
+aws-config = { version = "1.1", default-features = false, features = ["behavior-version-latest", "rustls", "rt-tokio"] }
+aws-sdk-s3 = { version = "1.1", default-features = false, features = ["rustls", "rt-tokio"] }
+
+chrono = "0.4"
