@@ -82,7 +82,7 @@ async fn function_handler(
         .put_object()
         .bucket(bucket_name)
         .key(&file_name)
-        .body(aws_sdk_s3::primitives::ByteStream::from(data_string.into_bytes()))
+        .body(ByteStream::from(data_string.into_bytes()))
         .content_type("application/json")
         .send()
         .await 
