@@ -24,6 +24,12 @@ Variables: `region` (default `eu-central-1`), `instance_type` (default `t3.micro
      curl "https://s3.amazonaws.com/session-manager-downloads/plugin/latest/ubuntu_64bit/session-manager-plugin.deb" -o session-manager-plugin.deb
      sudo dpkg -i session-manager-plugin.deb
      ```
+   - Amazon Linux (64 bit)
+     sudo yum install -y https://s3.amazonaws.com/session-manager-downloads/plugin/latest/linux_64bit/session-manager-plugin.rpm 
+
+   - Amazon Linux (arm)
+     sudo yum install -y https://s3.amazonaws.com/session-manager-downloads/plugin/latest/linux_arm64/session-manager-plugin.rpm 
+
    - Other platforms: see the AWS docs, "Install the Session Manager plugin".
    - Verify: `session-manager-plugin` (prints a success message).
 3. **Credentials** for the target account (SSO profile, env vars, etc.):
