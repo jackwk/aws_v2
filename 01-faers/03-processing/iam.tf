@@ -54,7 +54,7 @@ resource "aws_iam_policy" "glue_s3_access" {
           "logs:PutLogEvents"
         ]
         Effect   = "Allow"
-        Resource = "arn:aws:logs:*:*:*"
+        Resource = "arn:aws:logs:*:*:log-group:/aws-glue/*"
       },
       {
         Action = [

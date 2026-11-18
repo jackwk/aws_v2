@@ -34,4 +34,4 @@ __pycache__/
 .DS_Store
 
 # Leftover crate
-02-lambda-rust/app/faers-rust/
+01-faers/02-lambda-rust/app/faers-rust/

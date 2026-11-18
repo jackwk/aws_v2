@@ -95,3 +95,16 @@ resource "terraform_data" "ingest" {
     EOT
   }
 }
+
+# Publish IDs via SSM so 05-orchestration can find them (same pattern as 01 -> 02)
+resource "aws_ssm_parameter" "kb_id" {
+  name  = "/${var.project_prefix}/${var.environment}/knowledge_base_id"
+  type  = "String"
+  value = aws_bedrockagent_knowledge_base.faers.id
+}
+
+resource "aws_ssm_parameter" "data_source_id" {
+  name  = "/${var.project_prefix}/${var.environment}/data_source_id"
+  type  = "String"
+  value = aws_bedrockagent_data_source.faers_s3.data_source_id
+}

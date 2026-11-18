@@ -36,7 +36,7 @@ resource "aws_iam_policy" "lambda_s3_write" {
           "logs:PutLogEvents"
         ]
         Effect   = "Allow"
-        Resource = "arn:aws:logs:*:*:*"
+        Resource = "arn:aws:logs:*:*:log-group:/aws/lambda/${var.project_prefix}-ingest-faers-${var.environment}:*"
       }
     ]
   })
