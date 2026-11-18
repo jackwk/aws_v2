@@ -1,33 +1,37 @@
-# Local .terraform directory (compiled plugins and modules)
+# Terraform
 **/.terraform/
-
-# .tfstate files (contain sensitive data and resource IDs)
 **/*.tfstate
 **/*.tfstate.*
 **/tfplan
-**/*.hcl
-
-# Crash logs
+**/.terraform.lock.hcl
 crash.log
 crash.*.log
-
-# Exclude all .tfvars files (often contain secrets)
-# Exception: You might want to allow 'example.tfvars'
 *.tfvars
 *.tfvars.json
-
-# Override files
 override.tf
 override.tf.json
 *_override.tf
 *_override.tf.json
-
-# Terraform CLI configuration
 .terraformrc
 terraform.rc
 
-# Other
+# Build / deployment artifacts
 **/*.zip
-01-faers/lambda_function.zip
-02-lambda-rust/target
-02-lambda-rust/Cargo.lock
+**/*.tar.xz
+**/*.tar.gz
+**/response.json
+**/temp.txt
+
+# Rust: keep only source (Cargo.toml + src), ignore build output and lockfile
+**/target/
+**/Cargo.lock
+**/bootstrap
+
+# Python / misc
+__pycache__/
+*.pyc
+.venv/
+.DS_Store
+
+# Leftover crate
+02-lambda-rust/app/faers-rust/
