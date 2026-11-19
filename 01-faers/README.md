@@ -31,6 +31,7 @@ cd 01-faers
 (cd 01-ingestion  && terraform init && terraform apply $V)
 # 02-lambda-rust: build first (output: app/target/lambda/faers-rust/bootstrap.zip), then apply
 (cd 02-lambda-rust/app && cargo lambda build --release --arm64 --output-format zip)
+switch folder
 (cd 02-lambda-rust/infra && terraform init && terraform apply $V)
 (cd 03-processing && terraform init && terraform apply $V)
 
@@ -66,6 +67,8 @@ Expected: `[tool call] search_faers {...}` then an answer citing Report IDs and 
 
 ## Teardown (reverse order)
 ```bash
+V="-var project_prefix=v1 -var environment=dev -auto-approve"
+
 for d in 05-orchestration 04-bedrock 03-processing 02-lambda-rust/infra 01-ingestion; do
   (cd $d && terraform destroy $V)
 done
